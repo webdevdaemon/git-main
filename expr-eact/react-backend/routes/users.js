@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var data = require('../client/src/medical_data.1')
 
 /* GET users listing. */
 router.get('/', function (req, res, next) {

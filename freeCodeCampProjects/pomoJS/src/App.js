@@ -1,21 +1,47 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+
+import React, { Component } from 'react'
+
+import AppWrapper from './Components/AppWrapper/AppWrapper'
+import ClockWrapper from './Components/ClockWrapper/index'
+import logo from './logo.svg'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+	constructor() {
+		super()
+		this.state = {
+			is_running: false,
+			task_list: [],
+		}
+	}
+
+	_timerToggler = (is_running = this.state.is_running) => {
+		this.setState({
+			is_running: !is_running,
+		}, () => {
+			console.log('Timer Toggled')
+		})
+	}
+
+	_createNewTask = (e) => {
+		this.setState({
+
+		})
+	}
+
+	_deleteSelectedTask = (e) => {
+
+	}
+
+	render() {
+		return (
+			<div className="App">
+				<AppWrapper>
+					<ClockWrapper />
+				</AppWrapper>
+			</div>
+		)
+	}
 }
 
-export default App;
+export default App
